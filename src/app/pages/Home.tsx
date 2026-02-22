@@ -330,12 +330,17 @@ export default function Home() {
       <div className="py-16 bg-white mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            Pourquoi choisir Abidjan Route ?
+            Moyens de transport disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-8 h-8 text-orange-600" />
+                {/* <Sparkles className="w-8 h-8 text-orange-600" /> */}
+                <img 
+                    src="cd../assets/ai-icon.png" 
+                    alt="Description" 
+                    className="w-10 h-10 object-contain" 
+                  />
               </div>
               <h3 className="text-xl font-semibold mb-2">IA Intelligente</h3>
               <p className="text-gray-600">
