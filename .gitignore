@@ -1,1 +1,11 @@
-node_modules
+# Environnement virtuel
+venv/
+**/venv/
+__pycache__/
+*.pyc
+
+# Base de données locale
+db.sqlite3
+
+# Fichiers de configuration sensibles
+.env

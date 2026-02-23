@@ -1,0 +1,122 @@
+# ============================================================================
+# Requirements.txt pour Abidjan Route Backend (Django)
+# ============================================================================
+
+# Django Core
+Django==4.2.9
+django-cors-headers==4.3.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+
+# Database
+psycopg2-binary==2.9.9  # PostgreSQL adapter
+django-environ==0.11.2  # Environment variables
+
+# PostGIS / Geospatial
+#GDAL==3.8.3  # Attention: nécessite libgdal installé sur le système
+# Alternative pour éviter GDAL sur Windows/Mac pendant le dev:
+# django.contrib.gis fonctionne sans GDAL avec PostgreSQL/PostGIS
+
+# Authentication & Security
+django-phonenumber-field==7.3.0
+phonenumbers==8.13.27
+Pillow==10.2.0  # Images
+argon2-cffi==23.1.0  # Password hashing
+
+# API & Serialization
+django-filter==23.5
+drf-spectacular==0.27.0  # API documentation (Swagger/OpenAPI)
+
+# Cache
+redis==5.0.1
+django-redis==5.4.0
+hiredis==2.3.2
+
+# Tasks & Background Jobs (optionnel)
+celery==5.3.6
+django-celery-beat==2.5.0
+django-celery-results==2.5.1
+
+# AI/ML
+numpy==1.26.3
+pandas==2.1.4
+scikit-learn==1.4.0
+scipy==1.11.4
+
+# HTTP Requests (pour OSRM, APIs externes)
+requests==2.31.0
+httpx==0.26.0
+
+# Utils
+python-dateutil==2.8.2
+pytz==2023.3.post1
+python-slugify==8.0.1
+
+# Monitoring & Logging
+sentry-sdk==1.39.2  # Error tracking
+django-debug-toolbar==4.2.0  # Dev only
+
+# Testing
+pytest==7.4.4
+pytest-django==4.7.0
+pytest-cov==4.1.0
+factory-boy==3.3.0  # Test fixtures
+faker==22.0.0
+
+# Code Quality
+flake8==7.0.0
+black==23.12.1
+isort==5.13.2
+pylint==3.0.3
+mypy==1.8.0
+
+# Production Server
+gunicorn==21.2.0
+whitenoise==6.6.0  # Static files
+
+# Geospatial Libraries (système)
+# Sur Ubuntu/Debian:
+#   sudo apt-get install gdal-bin libgdal-dev
+#   sudo apt-get install python3-gdal
+#   sudo apt-get install libgeos-dev
+#   sudo apt-get install proj-bin
+#   sudo apt-get install libproj-dev
+
+# Sur macOS (avec Homebrew):
+#   brew install gdal
+#   brew install geos
+#   brew install proj
+
+# Sur Windows:
+#   Télécharger OSGeo4W: https://trac.osgeo.org/osgeo4w/
+
+# ============================================================================
+# Installation recommandée:
+# ============================================================================
+# 1. Créer un environnement virtuel:
+#    python -m venv venv
+#    source venv/bin/activate  # Linux/Mac
+#    venv\Scripts\activate     # Windows
+#
+# 2. Installer les dépendances:
+#    pip install --upgrade pip
+#    pip install -r requirements.txt
+#
+# 3. Installer PostGIS (système):
+#    Ubuntu: sudo apt-get install postgis postgresql-XX-postgis-3
+#    macOS: brew install postgis
+#    Windows: Utiliser l'installeur PostgreSQL avec PostGIS
+#
+# 4. Créer la base de données:
+#    psql -U postgres -f init_database.sql
+#
+# 5. Migrer:
+#    python manage.py makemigrations
+#    python manage.py migrate
+#
+# 6. Créer un superutilisateur:
+#    python manage.py createsuperuser
+#
+# 7. Lancer le serveur:
+#    python manage.py runserver
+# ============================================================================
