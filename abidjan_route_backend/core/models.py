@@ -26,8 +26,9 @@ from phonenumber_field.modelfields import PhoneNumberField
 class TimeStampedModel(models.Model):
     """Modèle abstrait avec timestamps"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
 
     class Meta:
         abstract = True
@@ -537,6 +538,10 @@ class Rating(TimeStampedModel):
 # ============================================================================
 
 class Hotel(TimeStampedModel):
+
+            # Fonction pour retourner la location par défaut
+    def get_default_location():
+        return Location.objects.get_or_create(name="Abidjan Centre")[0].id
     """Hôtels"""
     
     PRICE_RANGES = [
@@ -548,10 +553,11 @@ class Hotel(TimeStampedModel):
     name = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, max_length=250)
     location = models.ForeignKey(
-        Location,
-        on_delete=models.CASCADE,
-        related_name='hotels'
-    )
+    Location,
+    on_delete=models.CASCADE,
+    related_name='hotels',
+    default=get_default_location  
+)
     coordinates = gis_models.PointField(srid=4326, spatial_index=True)
     address = models.TextField()
     phone = PhoneNumberField(region='CI')
@@ -606,6 +612,9 @@ class Hotel(TimeStampedModel):
 
     def __str__(self):
         return self.name
+    
+
+
 
 
 class Restaurant(TimeStampedModel):

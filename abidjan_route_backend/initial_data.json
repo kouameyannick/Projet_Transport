@@ -1,0 +1,418 @@
+[
+  {
+    "model": "core.location",
+    "pk": "f22238f1-704f-4f81-8b57-66c403cc59d4",
+    "fields": {
+      "name": "Abobo",
+      "slug": "abobo",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-4.0167 5.4147)",
+      "population": 1200000,
+      "description": "Commune populaire du nord d'Abidjan",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "b5b02203-c04b-49cb-90f2-9bde933b2716",
+    "fields": {
+      "name": "Adjamé",
+      "slug": "adjame",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-4.0167 5.3500)",
+      "population": 500000,
+      "description": "Centre commercial et de transport d'Abidjan",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "076c6f71-7201-48c9-9fe0-b78590bcbe22",
+    "fields": {
+      "name": "Cocody",
+      "slug": "cocody",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-3.9833 5.3500)",
+      "population": 400000,
+      "description": "Quartier résidentiel huppé",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "c16611ac-916d-4c5c-aae4-6326c5f11155",
+    "fields": {
+      "name": "Plateau",
+      "slug": "plateau",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-4.0000 5.3167)",
+      "population": 50000,
+      "description": "Centre des affaires d'Abidjan",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "6320d6fd-08ae-4587-a5fb-92cd32891a88",
+    "fields": {
+      "name": "Yopougon",
+      "slug": "yopougon",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-4.0833 5.3333)",
+      "population": 1500000,
+      "description": "La plus grande commune d'Abidjan",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "55466e4c-9867-4416-9848-97afb1b763af",
+    "fields": {
+      "name": "Marcory",
+      "slug": "marcory",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-3.9833 5.2833)",
+      "population": 300000,
+      "description": "Zone résidentielle et commerciale",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "e8ba50ee-4088-4afc-9d89-f86a6c1a6c0c",
+    "fields": {
+      "name": "Treichville",
+      "slug": "treichville",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-4.0000 5.3000)",
+      "population": 150000,
+      "description": "Quartier animé avec le port",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "5eb54bb6-1f9b-49a9-88ca-024275e8450b",
+    "fields": {
+      "name": "Koumassi",
+      "slug": "koumassi",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-3.9500 5.3000)",
+      "population": 400000,
+      "description": "Zone industrielle et résidentielle",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "1737e52b-ce5c-40c6-b782-b05e46ffb376",
+    "fields": {
+      "name": "Port-Bouët",
+      "slug": "port-bouet",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-3.9167 5.2667)",
+      "population": 300000,
+      "description": "Abrite l'aéroport international",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.location",
+    "pk": "b0b8495d-97ef-4580-8d6d-5f1cba16fd58",
+    "fields": {
+      "name": "Attécoubé",
+      "slug": "attecoube",
+      "type": "commune",
+      "parent_location": null,
+      "coordinates": "POINT(-4.0333 5.3333)",
+      "population": 300000,
+      "description": "Commune résidentielle",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.transportmode",
+    "pk": "1addd773-0fd0-4508-a6ed-f2479d18d3e1",
+    "fields": {
+      "name": "Bus SOTRA",
+      "slug": "sotra",
+      "type": "bus",
+      "icon": "🚌",
+      "color": "#FF6B35",
+      "description": "Société des Transports Abidjanais - Bus publics",
+      "base_price": 200,
+      "price_per_km": 0,
+      "average_speed": 25,
+      "comfort_rating": 3,
+      "security_rating": 4,
+      "operating_hours_start": "05:00:00",
+      "operating_hours_end": "22:00:00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.transportmode",
+    "pk": "9d112cf3-8c71-4cea-b552-ef2a5443c17b",
+    "fields": {
+      "name": "Yango Taxi",
+      "slug": "yango",
+      "type": "taxi",
+      "icon": "🚕",
+      "color": "#4A90E2",
+      "description": "Service de taxi à la demande",
+      "base_price": 1000,
+      "price_per_km": 400,
+      "average_speed": 35,
+      "comfort_rating": 5,
+      "security_rating": 5,
+      "operating_hours_start": "00:00:00",
+      "operating_hours_end": "23:59:59",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.transportmode",
+    "pk": "2839ca25-b7ba-4663-a58a-6585973ae4a1",
+    "fields": {
+      "name": "Gbaka",
+      "slug": "gbaka",
+      "type": "gbaka",
+      "icon": "🚐",
+      "color": "#F7B731",
+      "description": "Minibus collectifs",
+      "base_price": 150,
+      "price_per_km": 0,
+      "average_speed": 20,
+      "comfort_rating": 2,
+      "security_rating": 3,
+      "operating_hours_start": "05:00:00",
+      "operating_hours_end": "23:00:00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.transportmode",
+    "pk": "a91add26-71c8-4d00-9431-77bf9757012f",
+    "fields": {
+      "name": "Woro-Woro",
+      "slug": "woro",
+      "type": "woro",
+      "icon": "🏍️",
+      "color": "#26A65B",
+      "description": "Taxi-motos rapides",
+      "base_price": 500,
+      "price_per_km": 300,
+      "average_speed": 40,
+      "comfort_rating": 3,
+      "security_rating": 3,
+      "operating_hours_start": "06:00:00",
+      "operating_hours_end": "20:00:00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.transportmode",
+    "pk": "d2a25602-a270-4892-ae4b-1f2f196c79bb",
+    "fields": {
+      "name": "Train",
+      "slug": "train",
+      "type": "train",
+      "icon": "🚆",
+      "color": "#8E44AD",
+      "description": "Train urbain",
+      "base_price": 400,
+      "price_per_km": 0,
+      "average_speed": 50,
+      "comfort_rating": 4,
+      "security_rating": 4,
+      "operating_hours_start": "06:00:00",
+      "operating_hours_end": "21:00:00",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.transportmode",
+    "pk": "f39f96bd-07e1-422b-9257-253f96752bf2",
+    "fields": {
+      "name": "Métro",
+      "slug": "metro",
+      "type": "metro",
+      "icon": "🚇",
+      "color": "#E74C3C",
+      "description": "Métro d'Abidjan (en construction)",
+      "base_price": 300,
+      "price_per_km": 0,
+      "average_speed": 60,
+      "comfort_rating": 5,
+      "security_rating": 5,
+      "operating_hours_start": "05:30:00",
+      "operating_hours_end": "23:30:00",
+      "is_active": false
+    }
+  },
+  {
+    "model": "core.transportmode",
+    "pk": "2bec4eb1-3f79-4ba3-8a70-a820262c70d5",
+    "fields": {
+      "name": "Location de voiture",
+      "slug": "location",
+      "type": "car_rental",
+      "icon": "🚗",
+      "color": "#3498DB",
+      "description": "Location de véhicule privé",
+      "base_price": 5000,
+      "price_per_km": 500,
+      "average_speed": 40,
+      "comfort_rating": 5,
+      "security_rating": 5,
+      "operating_hours_start": "08:00:00",
+      "operating_hours_end": "18:00:00",
+      "is_active": true
+    }
+  },
+{
+  "model": "core.hotel",
+  "pk": "98892527-fa3e-42c1-beb9-097218c75fe1",
+  "fields": {
+    "name": "Hôtel Ivoire",
+    "slug": "hotel-ivoire",
+    "location": "076c6f71-7201-48c9-9fe0-b78590bcbe22",
+    "coordinates": "POINT(-4.0000 5.3167)",
+    "address": "Boulevard Hassan II, Cocody",
+    "phone": "+22527224800",
+    "email": "contact@hotel-ivoire.ci",
+    "website": "https://www.sofitelabidjan.com",
+    "star_rating": 5,
+    "average_rating": 4.5,
+    "rating_count": 0,
+    "price_range": "luxury",
+    "min_price_fcfa": 50000,
+    "max_price_fcfa": 150000,
+    "amenities": {
+      "wifi": true,
+      "pool": true,
+      "restaurant": true,
+      "bar": true,
+      "spa": true,
+      "gym": true,
+      "parking": true,
+      "casino": true
+    },
+    "description": "Hôtel 5 étoiles emblématique d'Abidjan",
+    "photos": [],
+    "is_verified": true,
+    "is_active": true
+  }
+},
+  {
+    "model": "core.hotel",
+    "pk": "bc5ad21e-fbee-4f45-ba1c-6cc2044ed65e",
+    "fields": {
+      "name": "Pullman Abidjan",
+      "slug": "pullman-abidjan",
+      "coordinates": "POINT(-4.0050 5.3200)",
+      "address": "Rue Émile Boga Doudou, Plateau",
+      "phone": "+22527202550",
+      "email": "contact@pullman-abidjan.com",
+      "website": "https://www.pullmanhotels.com",
+      "star_rating": 5,
+      "average_rating": 4.8,
+      "rating_count": 0,
+      "price_range": "luxury",
+      "min_price_fcfa": 60000,
+      "max_price_fcfa": 200000,
+      "amenities": {
+        "wifi": true,
+        "pool": true,
+        "restaurant": true,
+        "bar": true,
+        "spa": true,
+        "gym": true,
+        "parking": true,
+        "business_center": true
+      },
+      "description": "Hôtel d'affaires moderne au cœur du Plateau",
+      "photos": [],
+      "is_verified": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.carrental",
+    "pk": "6d111ea8-2f41-4ca5-8e5d-94cc58e17f77",
+    "fields": {
+      "name": "Europcar Abidjan",
+      "slug": "europcar-abidjan",
+      "coordinates": "POINT(-4.0020 5.3170)",
+      "address": "Avenue Terrasson de Fougères, Plateau",
+      "phone": "+22527202200",
+      "email": "abidjan@europcar.ci",
+      "website": "https://www.europcar.ci",
+      "average_rating": 4.2,
+      "rating_count": 0,
+      "price_per_day_fcfa": 25000,
+      "car_types_available": [
+        "sedan",
+        "suv",
+        "4x4",
+        "minibus"
+      ],
+      "amenities": {
+        "gps": true,
+        "ac": true,
+        "automatic": true,
+        "bluetooth": true
+      },
+      "insurance_included": true,
+      "unlimited_mileage": false,
+      "description": "Location de véhicules de qualité européenne",
+      "photos": [],
+      "is_verified": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.carrental",
+    "pk": "2966197a-1e2a-4711-a563-0d5bc3bf2bef",
+    "fields": {
+      "name": "Hertz Côte d'Ivoire",
+      "slug": "hertz-ci",
+      "coordinates": "POINT(-3.9180 5.2680)",
+      "address": "Aéroport International Félix Houphouët-Boigny",
+      "phone": "+22527212787",
+      "email": "abidjan@hertz.ci",
+      "website": "https://www.hertz.ci",
+      "average_rating": 4.5,
+      "rating_count": 0,
+      "price_per_day_fcfa": 30000,
+      "car_types_available": [
+        "economy",
+        "sedan",
+        "suv",
+        "luxury"
+      ],
+      "amenities": {
+        "gps": true,
+        "ac": true,
+        "automatic": true,
+        "child_seat": true,
+        "bluetooth": true
+      },
+      "insurance_included": true,
+      "unlimited_mileage": true,
+      "description": "Leader mondial de la location de voitures",
+      "photos": [],
+      "is_verified": true,
+      "is_active": true
+    }
+  }
+]
