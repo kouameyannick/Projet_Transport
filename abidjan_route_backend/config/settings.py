@@ -9,8 +9,13 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
+
 
 from pathlib import Path
+
+# Indiquer à Django où trouver GDAL
+GDAL_LIBRARY_PATH = r"C:\OSGeo4W\bin\gdal312.dll"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,11 +24,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-99(7$*a4nxqwj1z+w=!@dk!qo_syf%g&pr3!#f6u6^r-ssbuey"
+import environ # Importation de django-environ
+import os
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# 1. Initialiser l'outil de lecture
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+# 2. Lire le fichier .env
+# On lui dit où se trouve le fichier .env par rapport à ce dossier
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# 3. Récupérer les valeurs du .env
+SECRET_KEY = env('DJANGO_SECRET_KEY')
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +52,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Tes applications
+    'core',
+    'transport',
+    'users',
+    'pois',
+    'api',
+    'ai',
+    'django.contrib.gis', # pour les fonctionnalités géospatiales
 ]
 
 MIDDLEWARE = [
@@ -75,8 +99,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.contrib.gis.db.backends.postgis",  # Utilisation de PostGIS pour les fonctionnalités géospatiales
+        "NAME": "abidjan_route",       # le nom de ta base PostgreSQL
+        "USER": env('DB_USER'),      # ton username PostgreSQL
+        "PASSWORD": env('DB_PASSWORD'), # ton mot de passe PostgreSQL
+        "HOST": env('DB_HOST'),            # ou l'IP du serveur PostgreSQL
+        "PORT": env('DB_PORT'),                 # port PostgreSQL par défaut
     }
 }
 
@@ -121,3 +149,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+#Pour utiliser notre propre modèle d'utilisateur
+AUTH_USER_MODEL = 'core.User'
+
